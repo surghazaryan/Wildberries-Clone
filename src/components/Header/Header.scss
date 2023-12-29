@@ -1,0 +1,33 @@
+@import "../../Styles/variables.scss";
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background: linear-gradient(to right, #cb11ab 0, #481173 100%) no-repeat;
+
+  .header-cnt-top {
+    border-bottom: 1px solid #fff;
+  }
+
+  .currency {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .location {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+  }
+
+  .vert-line {
+    background-color: lighten(#fff, 10%);
+  }
+  .fs-13 {
+    color: rgb(255, 255, 255, 0.7);
+  }
+}
