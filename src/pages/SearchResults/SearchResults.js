@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router";
 import Card from "../Card/Card";
+import NotFound from "../NotFound/NotFound";
 
 const SearchResults = () => {
   const location = useLocation();
@@ -23,13 +24,16 @@ const SearchResults = () => {
   return (
     <div className="container mt-3 p-4">
       <div className="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
-        {searchValue.map((item) => {
-          return (
-            <div key={item.id}>
-              <Card item={item} />
-            </div>
-          );
-        })}
+        {
+          searchValue.length === 0 ? <NotFound/>:
+            searchValue.map((item)=>{
+              return(
+                <div key={item.id}>
+                <Card item={item} />
+              </div>
+              )
+            })   
+        }
       </div>
     </div>
   );
