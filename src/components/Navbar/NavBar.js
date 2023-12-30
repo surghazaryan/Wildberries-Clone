@@ -17,12 +17,21 @@ const NavBar = () => {
   });
   const count = cart_items.length;
 
-  function handleSearch() {
+  const handleSearch = () => {
     if (search.trim().length !== 0) {
       navigate("search-results", { state: search });
       setSearch("");
     }
-  }
+  };
+  const handleSearchTerm = (evt: React.ChangeEvent<HTMLInputElement>) => {
+    setSearch(evt.target.value);
+  };
+  const onHandleKeyDown = async (evt: React.KeyboardEvent) => {
+    if (evt.key === "Enter") {
+      navigate("search-results", { state: search });
+      setSearch("");
+    }
+  };
   return (
     <>
       <nav className="navbar">
@@ -51,11 +60,15 @@ const NavBar = () => {
                   placeholder="search or wildberries"
                   value={search}
                   onChange={(e) => {
-                    setSearch(e.target.value);
+                    handleSearchTerm(e);
                   }}
+                  onKeyDown={onHandleKeyDown}
                 />
-                <button onClick={handleSearch} className="text-white search-btn flex align-center justify-center border-0">
-                  <FaSearch  className="search-icon" />
+                <button
+                  onClick={handleSearch}
+                  className="text-white search-btn flex align-center justify-center border-0"
+                >
+                  <FaSearch className="search-icon" />
                 </button>
               </div>
             </div>

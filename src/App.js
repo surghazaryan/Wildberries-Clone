@@ -14,7 +14,7 @@ import Furniture from "./pages/Furniture/Furniture";
 import Tops from "./pages/Tops/Tops";
 import Womensdresses from "./pages/WomensDresses/Womensdresses";
 import Footer from "./components/Footer/Footer";
-import NotFound from "./pages/NotFound/NotFound";
+
 
 function App() {
   return (
@@ -35,7 +35,6 @@ function App() {
           <Route path="/furniture" element={<Furniture />} />
           <Route path="/tops" element={<Tops />} />
           <Route path="/womens-dresses" element={<Womensdresses />} />
-          <Route path="/notfound" element={<NotFound/>} />
         </Routes>
         <Footer />
       </BrowserRouter>
