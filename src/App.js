@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/Homepage/HomePage";
 import Header from "./components/Header/Header";
 import Phones from "./pages/Phones/Phones";
@@ -20,7 +20,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Header />
+        <Header/>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/search-results" element={<SearchResults />} />

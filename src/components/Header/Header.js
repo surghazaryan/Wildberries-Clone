@@ -6,7 +6,7 @@ import NavBar from "../Navbar/NavBar";
 const Header = () => {
   return (
     <>
-      <header className="header text-white">
+      <header className="header text-white" id='top'>
         <div className="container">
           <div className="header-cnt">
             <div className="header-cnt-top fs-13 py-2 flex align-center justify-between">
