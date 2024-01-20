@@ -25,11 +25,6 @@ const Footer = () => {
             &copy; 2023 Mutasim. All Rights Reserved.
           </span>
         </div>
-        <button>
-          <a href="#top">
-            <BsArrowUpShort className="up" />
-          </a>
-        </button>
       </footer>
     </>
   );
