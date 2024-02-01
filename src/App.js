@@ -1,4 +1,4 @@
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/Homepage/HomePage";
 import Header from "./components/Header/Header";
 import Phones from "./pages/Phones/Phones";
@@ -14,15 +14,31 @@ import Furniture from "./pages/Furniture/Furniture";
 import Tops from "./pages/Tops/Tops";
 import Womensdresses from "./pages/WomensDresses/Womensdresses";
 import Footer from "./components/Footer/Footer";
-
+import { useEffect, useState } from "react";
+import Loading from "./components/loading/Loading";
 
 function App() {
+  const [isloadind, setisloading] = useState(true);
+  useEffect(() => {
+    const FakeDataFetch = () => {
+      setTimeout(() => {
+        setisloading(false);
+      }, 2000);
+    };
+    FakeDataFetch();
+  }, []);
   return (
     <div className="App">
       <BrowserRouter>
-        <Header/>
+        <Header />
+        {isloadind ? (
+          <Loading />
+        ) : (
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+          </Routes>
+        )}
         <Routes>
-          <Route path="/" element={<HomePage />} />
           <Route path="/search-results" element={<SearchResults />} />
           <Route path="/corzina" element={<Corzina />} />
           <Route path="/product/:id" element={<ProductDetails />} />
